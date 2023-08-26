@@ -44,6 +44,7 @@ public class WebClientConfiguration implements WebFluxConfigurer {
                 .build();
 
         return HttpClient.create(connectionProvider)
+                .metrics(true, s -> s)
                 .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 15000) // 30 sec
                 .doOnConnected( it -> {
                     it.addHandlerLast(new ReadTimeoutHandler(30000)) // 30 sec

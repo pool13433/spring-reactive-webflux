@@ -31,3 +31,5 @@ build/
 
 ### VS Code ###
 .vscode/
+docker-v.1/
+docker-v.2/
